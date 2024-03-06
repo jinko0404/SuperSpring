@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings><!--my batis가 NULL값을 NULL로 받아드리게 해주는 세팅 -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+<!-- VO가 생성될 때 마다 추가 -->
+ 	<typeAliases>
+ 		<typeAlias type="com.kh.Super.member.domain.MemberVO" alias="Member"/>
+ 		<typeAlias type="com.kh.Super.notice.domain.NoticeVO" alias="Notice"/>
+ 		<typeAlias type="com.kh.Super.board.domain.BoardVO" alias="Board"/>
+ 		<typeAlias type="com.kh.Super.board.domain.ReplyVO" alias="Reply"/>
+ 	</typeAliases>
+ <!-- mapper.xml이 생성될 때마다 추가 -->
+ 	<mappers> 
+ 		<mapper resource="mappers/member-mapper.xml"/>
+ 		<mapper resource="mappers/notice-mapper.xml"/>
+ 		<mapper resource="mappers/board-mapper.xml"/>
+ 		<mapper resource="mappers/reply-mapper.xml"/>
+ 	</mappers>
+</configuration>
